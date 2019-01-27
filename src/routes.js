@@ -4,7 +4,7 @@ import Welcome from 'pages/welcome';
 import Organizations from 'pages/organizations';
 import Repositories from 'pages/repositories';
 
-const Routes = createStackNavigator({
+const createRootNavigator = (userExist = false) => createStackNavigator({
   Welcome: {
     screen: Welcome,
   },
@@ -14,8 +14,8 @@ const Routes = createStackNavigator({
       Organizations: { screen: Organizations },
     }),
   },
-}, { initialRouteName: 'Welcome' });
+}, { initialRouteName: userExist ? 'User' : 'Welcome' });
 
-const App = createAppContainer(Routes);
+const App = createAppContainer(createRootNavigator);
 
 export default App;

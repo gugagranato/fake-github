@@ -37,7 +37,7 @@ class Welcome extends Component {
 
     if (!response.ok) throw Error();
 
-    await AsyncStorage.setItem('@fake-github:username', username);
+    await AsyncStorage.setItem('@Githuber:username', username);
   }
 
   navigateToUser = () => {
